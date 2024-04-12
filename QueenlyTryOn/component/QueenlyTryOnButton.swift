@@ -10,7 +10,9 @@ import UIKit
 public class QueenlyTryOnButton: QueenlyButton {
     
     weak var presentingVC: UIViewController?
-    weak var delegate: QueenlyTryOnDelegate?
+    
+    @objc
+    public weak var delegate: QueenlyTryOnDelegate?
     
     var productTitle: String
     var color: String
