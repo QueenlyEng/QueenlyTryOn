@@ -9,12 +9,104 @@
 /* Begin PBXBuildFile section */
 		5E7FFC9F2BBB6949000353AD /* QueenlyTryOn.docc in Sources */ = {isa = PBXBuildFile; fileRef = 5E7FFC9E2BBB6949000353AD /* QueenlyTryOn.docc */; };
 		5E7FFCA02BBB6949000353AD /* QueenlyTryOn.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E7FFC9D2BBB6949000353AD /* QueenlyTryOn.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E7FFD0A2BBBBC96000353AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E7FFD092BBBBC96000353AD /* Assets.xcassets */; };
+		5E8634DE2BC8D7C200CE98E9 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8634B12BC8D7C000CE98E9 /* CGPoint+Extension.swift */; };
+		5E8634E52BC8D7C200CE98E9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8634B82BC8D7C100CE98E9 /* UIView+Extension.swift */; };
+		5E8634F62BC8D7C200CE98E9 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8634C92BC8D7C100CE98E9 /* Array+Extension.swift */; };
+		5E8634FB2BC8D7C200CE98E9 /* SCNVector3+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8634CE2BC8D7C200CE98E9 /* SCNVector3+Extension.swift */; };
+		5E8634FC2BC8D7C200CE98E9 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8634CF2BC8D7C200CE98E9 /* UIImage+Extension.swift */; };
+		5E8635062BC8D7C200CE98E9 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8634D92BC8D7C200CE98E9 /* String+Extension.swift */; };
+		5E8635072BC8D7C200CE98E9 /* UIPinchGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8634DA2BC8D7C200CE98E9 /* UIPinchGestureRecognizer+Extension.swift */; };
+		5E86357E2BC8DFE700CE98E9 /* QTryOnResizeToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635582BC8DFE500CE98E9 /* QTryOnResizeToolStack.swift */; };
+		5E86357F2BC8DFE700CE98E9 /* QKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635592BC8DFE500CE98E9 /* QKey.swift */; };
+		5E8635802BC8DFE700CE98E9 /* QARTryOnUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86355A2BC8DFE500CE98E9 /* QARTryOnUtil.swift */; };
+		5E8635812BC8DFE700CE98E9 /* QAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86355B2BC8DFE500CE98E9 /* QAccountManager.swift */; };
+		5E8635822BC8DFE700CE98E9 /* QAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86355C2BC8DFE500CE98E9 /* QAccount.swift */; };
+		5E8635832BC8DFE700CE98E9 /* QAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86355D2BC8DFE500CE98E9 /* QAPI.swift */; };
+		5E8635842BC8DFE700CE98E9 /* QPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86355E2BC8DFE500CE98E9 /* QPhotoCell.swift */; };
+		5E8635852BC8DFE700CE98E9 /* QPhotoTryOnUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86355F2BC8DFE500CE98E9 /* QPhotoTryOnUtil.swift */; };
+		5E8635862BC8DFE700CE98E9 /* QLoadingOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635602BC8DFE500CE98E9 /* QLoadingOverlayView.swift */; };
+		5E8635872BC8DFE700CE98E9 /* QTryOnObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635612BC8DFE500CE98E9 /* QTryOnObject.swift */; };
+		5E8635882BC8DFE700CE98E9 /* QItemPhotoMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635622BC8DFE500CE98E9 /* QItemPhotoMeasurement.swift */; };
+		5E8635892BC8DFE700CE98E9 /* QueenlyARTryOnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635632BC8DFE600CE98E9 /* QueenlyARTryOnViewController.swift */; };
+		5E86358A2BC8DFE700CE98E9 /* QueenlyLibraryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635642BC8DFE600CE98E9 /* QueenlyLibraryPickerViewController.swift */; };
+		5E86358B2BC8DFE700CE98E9 /* QueenlyIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635652BC8DFE600CE98E9 /* QueenlyIconButton.swift */; };
+		5E86358C2BC8DFE700CE98E9 /* QueenlyTryOnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635662BC8DFE600CE98E9 /* QueenlyTryOnButton.swift */; };
+		5E86358D2BC8DFE700CE98E9 /* QTryOnGesturesTutorialOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635672BC8DFE600CE98E9 /* QTryOnGesturesTutorialOverlayView.swift */; };
+		5E86358E2BC8DFE700CE98E9 /* QTryOnError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635682BC8DFE600CE98E9 /* QTryOnError.swift */; };
+		5E86358F2BC8DFE700CE98E9 /* QItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635692BC8DFE600CE98E9 /* QItemManager.swift */; };
+		5E8635902BC8DFE700CE98E9 /* QImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86356A2BC8DFE600CE98E9 /* QImageHandler.swift */; };
+		5E8635912BC8DFE700CE98E9 /* QTryOnNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86356B2BC8DFE600CE98E9 /* QTryOnNode.swift */; };
+		5E8635922BC8DFE700CE98E9 /* QTryOnStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86356C2BC8DFE600CE98E9 /* QTryOnStyling.swift */; };
+		5E8635932BC8DFE700CE98E9 /* QNavigationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86356D2BC8DFE600CE98E9 /* QNavigationHeaderView.swift */; };
+		5E8635942BC8DFE700CE98E9 /* QItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86356E2BC8DFE600CE98E9 /* QItem.swift */; };
+		5E8635952BC8DFE700CE98E9 /* QCroppedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86356F2BC8DFE600CE98E9 /* QCroppedImage.swift */; };
+		5E8635962BC8DFE700CE98E9 /* QTryOnPhotoLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635702BC8DFE600CE98E9 /* QTryOnPhotoLandingViewController.swift */; };
+		5E8635972BC8DFE700CE98E9 /* QJointName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635712BC8DFE600CE98E9 /* QJointName.swift */; };
+		5E8635982BC8DFE700CE98E9 /* QueenlyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635722BC8DFE600CE98E9 /* QueenlyButton.swift */; };
+		5E8635992BC8DFE700CE98E9 /* QTryOnPhotoResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635732BC8DFE600CE98E9 /* QTryOnPhotoResultViewController.swift */; };
+		5E86359A2BC8DFE700CE98E9 /* QueenlyTryOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635742BC8DFE600CE98E9 /* QueenlyTryOn.swift */; };
+		5E86359B2BC8DFE700CE98E9 /* QItemARMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635752BC8DFE600CE98E9 /* QItemARMeasurement.swift */; };
+		5E86359C2BC8DFE700CE98E9 /* QAlertPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635762BC8DFE600CE98E9 /* QAlertPopUp.swift */; };
+		5E86359D2BC8DFE700CE98E9 /* QTryOnRepositionToolStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635772BC8DFE600CE98E9 /* QTryOnRepositionToolStack.swift */; };
+		5E86359E2BC8DFE700CE98E9 /* QTryOnBodyGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635782BC8DFE600CE98E9 /* QTryOnBodyGuideView.swift */; };
+		5E86359F2BC8DFE700CE98E9 /* QTryOnUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8635792BC8DFE600CE98E9 /* QTryOnUtil.swift */; };
+		5E8635A02BC8DFE700CE98E9 /* QueenlyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86357A2BC8DFE700CE98E9 /* QueenlyViewController.swift */; };
+		5E8635A12BC8DFE700CE98E9 /* QAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86357B2BC8DFE700CE98E9 /* QAPIError.swift */; };
+		5E8635A22BC8DFE700CE98E9 /* QTryOnToolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86357C2BC8DFE700CE98E9 /* QTryOnToolButton.swift */; };
+		5E8635A32BC8DFE700CE98E9 /* QPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86357D2BC8DFE700CE98E9 /* QPopUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5E7FFC9A2BBB6949000353AD /* QueenlyTryOn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QueenlyTryOn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E7FFC9D2BBB6949000353AD /* QueenlyTryOn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QueenlyTryOn.h; sourceTree = "<group>"; };
 		5E7FFC9E2BBB6949000353AD /* QueenlyTryOn.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = QueenlyTryOn.docc; sourceTree = "<group>"; };
+		5E7FFD092BBBBC96000353AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5E8634B12BC8D7C000CE98E9 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
+		5E8634B82BC8D7C100CE98E9 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		5E8634C92BC8D7C100CE98E9 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		5E8634CE2BC8D7C200CE98E9 /* SCNVector3+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extension.swift"; sourceTree = "<group>"; };
+		5E8634CF2BC8D7C200CE98E9 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		5E8634D92BC8D7C200CE98E9 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		5E8634DA2BC8D7C200CE98E9 /* UIPinchGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIPinchGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
+		5E8635582BC8DFE500CE98E9 /* QTryOnResizeToolStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTryOnResizeToolStack.swift; sourceTree = "<group>"; };
+		5E8635592BC8DFE500CE98E9 /* QKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKey.swift; sourceTree = "<group>"; };
+		5E86355A2BC8DFE500CE98E9 /* QARTryOnUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QARTryOnUtil.swift; sourceTree = "<group>"; };
+		5E86355B2BC8DFE500CE98E9 /* QAccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAccountManager.swift; sourceTree = "<group>"; };
+		5E86355C2BC8DFE500CE98E9 /* QAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAccount.swift; sourceTree = "<group>"; };
+		5E86355D2BC8DFE500CE98E9 /* QAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAPI.swift; sourceTree = "<group>"; };
+		5E86355E2BC8DFE500CE98E9 /* QPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPhotoCell.swift; sourceTree = "<group>"; };
+		5E86355F2BC8DFE500CE98E9 /* QPhotoTryOnUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPhotoTryOnUtil.swift; sourceTree = "<group>"; };
+		5E8635602BC8DFE500CE98E9 /* QLoadingOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QLoadingOverlayView.swift; sourceTree = "<group>"; };
+		5E8635612BC8DFE500CE98E9 /* QTryOnObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTryOnObject.swift; sourceTree = "<group>"; };
+		5E8635622BC8DFE500CE98E9 /* QItemPhotoMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QItemPhotoMeasurement.swift; sourceTree = "<group>"; };
+		5E8635632BC8DFE600CE98E9 /* QueenlyARTryOnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueenlyARTryOnViewController.swift; sourceTree = "<group>"; };
+		5E8635642BC8DFE600CE98E9 /* QueenlyLibraryPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueenlyLibraryPickerViewController.swift; sourceTree = "<group>"; };
+		5E8635652BC8DFE600CE98E9 /* QueenlyIconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueenlyIconButton.swift; sourceTree = "<group>"; };
+		5E8635662BC8DFE600CE98E9 /* QueenlyTryOnButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueenlyTryOnButton.swift; sourceTree = "<group>"; };
+		5E8635672BC8DFE600CE98E9 /* QTryOnGesturesTutorialOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTryOnGesturesTutorialOverlayView.swift; sourceTree = "<group>"; };
+		5E8635682BC8DFE600CE98E9 /* QTryOnError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTryOnError.swift; sourceTree = "<group>"; };
+		5E8635692BC8DFE600CE98E9 /* QItemManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QItemManager.swift; sourceTree = "<group>"; };
+		5E86356A2BC8DFE600CE98E9 /* QImageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QImageHandler.swift; sourceTree = "<group>"; };
+		5E86356B2BC8DFE600CE98E9 /* QTryOnNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTryOnNode.swift; sourceTree = "<group>"; };
+		5E86356C2BC8DFE600CE98E9 /* QTryOnStyling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTryOnStyling.swift; sourceTree = "<group>"; };
+		5E86356D2BC8DFE600CE98E9 /* QNavigationHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QNavigationHeaderView.swift; sourceTree = "<group>"; };
+		5E86356E2BC8DFE600CE98E9 /* QItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QItem.swift; sourceTree = "<group>"; };
+		5E86356F2BC8DFE600CE98E9 /* QCroppedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QCroppedImage.swift; sourceTree = "<group>"; };
+		5E8635702BC8DFE600CE98E9 /* QTryOnPhotoLandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTryOnPhotoLandingViewController.swift; sourceTree = "<group>"; };
+		5E8635712BC8DFE600CE98E9 /* QJointName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QJointName.swift; sourceTree = "<group>"; };
+		5E8635722BC8DFE600CE98E9 /* QueenlyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueenlyButton.swift; sourceTree = "<group>"; };
+		5E8635732BC8DFE600CE98E9 /* QTryOnPhotoResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTryOnPhotoResultViewController.swift; sourceTree = "<group>"; };
+		5E8635742BC8DFE600CE98E9 /* QueenlyTryOn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueenlyTryOn.swift; sourceTree = "<group>"; };
+		5E8635752BC8DFE600CE98E9 /* QItemARMeasurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QItemARMeasurement.swift; sourceTree = "<group>"; };
+		5E8635762BC8DFE600CE98E9 /* QAlertPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAlertPopUp.swift; sourceTree = "<group>"; };
+		5E8635772BC8DFE600CE98E9 /* QTryOnRepositionToolStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTryOnRepositionToolStack.swift; sourceTree = "<group>"; };
+		5E8635782BC8DFE600CE98E9 /* QTryOnBodyGuideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTryOnBodyGuideView.swift; sourceTree = "<group>"; };
+		5E8635792BC8DFE600CE98E9 /* QTryOnUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTryOnUtil.swift; sourceTree = "<group>"; };
+		5E86357A2BC8DFE700CE98E9 /* QueenlyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueenlyViewController.swift; sourceTree = "<group>"; };
+		5E86357B2BC8DFE700CE98E9 /* QAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAPIError.swift; sourceTree = "<group>"; };
+		5E86357C2BC8DFE700CE98E9 /* QTryOnToolButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QTryOnToolButton.swift; sourceTree = "<group>"; };
+		5E86357D2BC8DFE700CE98E9 /* QPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPopUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +140,111 @@
 			isa = PBXGroup;
 			children = (
 				5E7FFC9D2BBB6949000353AD /* QueenlyTryOn.h */,
+				5E8635742BC8DFE600CE98E9 /* QueenlyTryOn.swift */,
+				5E8635BB2BC8F01100CE98E9 /* model */,
+				5E8635BA2BC8EFFC00CE98E9 /* networking */,
+				5E8635B72BC8EEF900CE98E9 /* ar env */,
+				5E8635B62BC8EEB600CE98E9 /* photo env */,
+				5E8635B82BC8EF8E00CE98E9 /* component */,
+				5E8635B92BC8EFC600CE98E9 /* util */,
+				5E86350B2BC8D7C900CE98E9 /* extension */,
+				5E7FFD092BBBBC96000353AD /* Assets.xcassets */,
 				5E7FFC9E2BBB6949000353AD /* QueenlyTryOn.docc */,
 			);
 			path = QueenlyTryOn;
+			sourceTree = "<group>";
+		};
+		5E86350B2BC8D7C900CE98E9 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				5E8634C92BC8D7C100CE98E9 /* Array+Extension.swift */,
+				5E8634CE2BC8D7C200CE98E9 /* SCNVector3+Extension.swift */,
+				5E8634CF2BC8D7C200CE98E9 /* UIImage+Extension.swift */,
+				5E8634DA2BC8D7C200CE98E9 /* UIPinchGestureRecognizer+Extension.swift */,
+				5E8634B82BC8D7C100CE98E9 /* UIView+Extension.swift */,
+				5E8634D92BC8D7C200CE98E9 /* String+Extension.swift */,
+				5E8634B12BC8D7C000CE98E9 /* CGPoint+Extension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		5E8635B62BC8EEB600CE98E9 /* photo env */ = {
+			isa = PBXGroup;
+			children = (
+				5E86355E2BC8DFE500CE98E9 /* QPhotoCell.swift */,
+				5E8635612BC8DFE500CE98E9 /* QTryOnObject.swift */,
+				5E86355F2BC8DFE500CE98E9 /* QPhotoTryOnUtil.swift */,
+				5E8635622BC8DFE500CE98E9 /* QItemPhotoMeasurement.swift */,
+				5E8635702BC8DFE600CE98E9 /* QTryOnPhotoLandingViewController.swift */,
+				5E8635732BC8DFE600CE98E9 /* QTryOnPhotoResultViewController.swift */,
+				5E8635642BC8DFE600CE98E9 /* QueenlyLibraryPickerViewController.swift */,
+			);
+			path = "photo env";
+			sourceTree = "<group>";
+		};
+		5E8635B72BC8EEF900CE98E9 /* ar env */ = {
+			isa = PBXGroup;
+			children = (
+				5E8635782BC8DFE600CE98E9 /* QTryOnBodyGuideView.swift */,
+				5E86356B2BC8DFE600CE98E9 /* QTryOnNode.swift */,
+				5E86355A2BC8DFE500CE98E9 /* QARTryOnUtil.swift */,
+				5E8635752BC8DFE600CE98E9 /* QItemARMeasurement.swift */,
+				5E8635632BC8DFE600CE98E9 /* QueenlyARTryOnViewController.swift */,
+			);
+			path = "ar env";
+			sourceTree = "<group>";
+		};
+		5E8635B82BC8EF8E00CE98E9 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				5E8635662BC8DFE600CE98E9 /* QueenlyTryOnButton.swift */,
+				5E8635762BC8DFE600CE98E9 /* QAlertPopUp.swift */,
+				5E8635602BC8DFE500CE98E9 /* QLoadingOverlayView.swift */,
+				5E86356D2BC8DFE600CE98E9 /* QNavigationHeaderView.swift */,
+				5E86357D2BC8DFE700CE98E9 /* QPopUpViewController.swift */,
+				5E8635672BC8DFE600CE98E9 /* QTryOnGesturesTutorialOverlayView.swift */,
+				5E8635772BC8DFE600CE98E9 /* QTryOnRepositionToolStack.swift */,
+				5E8635582BC8DFE500CE98E9 /* QTryOnResizeToolStack.swift */,
+				5E86357C2BC8DFE700CE98E9 /* QTryOnToolButton.swift */,
+				5E8635722BC8DFE600CE98E9 /* QueenlyButton.swift */,
+				5E8635652BC8DFE600CE98E9 /* QueenlyIconButton.swift */,
+				5E86357A2BC8DFE700CE98E9 /* QueenlyViewController.swift */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
+		5E8635B92BC8EFC600CE98E9 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				5E8635592BC8DFE500CE98E9 /* QKey.swift */,
+				5E86356C2BC8DFE600CE98E9 /* QTryOnStyling.swift */,
+				5E8635792BC8DFE600CE98E9 /* QTryOnUtil.swift */,
+				5E86356A2BC8DFE600CE98E9 /* QImageHandler.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		5E8635BA2BC8EFFC00CE98E9 /* networking */ = {
+			isa = PBXGroup;
+			children = (
+				5E86355D2BC8DFE500CE98E9 /* QAPI.swift */,
+			);
+			path = networking;
+			sourceTree = "<group>";
+		};
+		5E8635BB2BC8F01100CE98E9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5E86355C2BC8DFE500CE98E9 /* QAccount.swift */,
+				5E86355B2BC8DFE500CE98E9 /* QAccountManager.swift */,
+				5E86357B2BC8DFE700CE98E9 /* QAPIError.swift */,
+				5E86356F2BC8DFE600CE98E9 /* QCroppedImage.swift */,
+				5E86356E2BC8DFE600CE98E9 /* QItem.swift */,
+				5E8635692BC8DFE600CE98E9 /* QItemManager.swift */,
+				5E8635712BC8DFE600CE98E9 /* QJointName.swift */,
+				5E8635682BC8DFE600CE98E9 /* QTryOnError.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E7FFD0A2BBBBC96000353AD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +327,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E8634F62BC8D7C200CE98E9 /* Array+Extension.swift in Sources */,
+				5E86359E2BC8DFE700CE98E9 /* QTryOnBodyGuideView.swift in Sources */,
+				5E8635902BC8DFE700CE98E9 /* QImageHandler.swift in Sources */,
+				5E8635862BC8DFE700CE98E9 /* QLoadingOverlayView.swift in Sources */,
+				5E86359F2BC8DFE700CE98E9 /* QTryOnUtil.swift in Sources */,
+				5E86359C2BC8DFE700CE98E9 /* QAlertPopUp.swift in Sources */,
+				5E86358D2BC8DFE700CE98E9 /* QTryOnGesturesTutorialOverlayView.swift in Sources */,
+				5E8635802BC8DFE700CE98E9 /* QARTryOnUtil.swift in Sources */,
+				5E8635062BC8D7C200CE98E9 /* String+Extension.swift in Sources */,
+				5E86358A2BC8DFE700CE98E9 /* QueenlyLibraryPickerViewController.swift in Sources */,
+				5E86357E2BC8DFE700CE98E9 /* QTryOnResizeToolStack.swift in Sources */,
+				5E8635A32BC8DFE700CE98E9 /* QPopUpViewController.swift in Sources */,
+				5E86359A2BC8DFE700CE98E9 /* QueenlyTryOn.swift in Sources */,
+				5E8635072BC8D7C200CE98E9 /* UIPinchGestureRecognizer+Extension.swift in Sources */,
+				5E8635852BC8DFE700CE98E9 /* QPhotoTryOnUtil.swift in Sources */,
+				5E8635872BC8DFE700CE98E9 /* QTryOnObject.swift in Sources */,
+				5E86358F2BC8DFE700CE98E9 /* QItemManager.swift in Sources */,
+				5E8635982BC8DFE700CE98E9 /* QueenlyButton.swift in Sources */,
+				5E8635992BC8DFE700CE98E9 /* QTryOnPhotoResultViewController.swift in Sources */,
+				5E8635842BC8DFE700CE98E9 /* QPhotoCell.swift in Sources */,
+				5E8635812BC8DFE700CE98E9 /* QAccountManager.swift in Sources */,
+				5E8635892BC8DFE700CE98E9 /* QueenlyARTryOnViewController.swift in Sources */,
+				5E8635972BC8DFE700CE98E9 /* QJointName.swift in Sources */,
+				5E8635952BC8DFE700CE98E9 /* QCroppedImage.swift in Sources */,
+				5E8635A12BC8DFE700CE98E9 /* QAPIError.swift in Sources */,
+				5E8634E52BC8D7C200CE98E9 /* UIView+Extension.swift in Sources */,
+				5E8635822BC8DFE700CE98E9 /* QAccount.swift in Sources */,
+				5E8635922BC8DFE700CE98E9 /* QTryOnStyling.swift in Sources */,
+				5E8635962BC8DFE700CE98E9 /* QTryOnPhotoLandingViewController.swift in Sources */,
+				5E8635882BC8DFE700CE98E9 /* QItemPhotoMeasurement.swift in Sources */,
+				5E8634DE2BC8D7C200CE98E9 /* CGPoint+Extension.swift in Sources */,
+				5E86359B2BC8DFE700CE98E9 /* QItemARMeasurement.swift in Sources */,
+				5E86358B2BC8DFE700CE98E9 /* QueenlyIconButton.swift in Sources */,
+				5E8634FB2BC8D7C200CE98E9 /* SCNVector3+Extension.swift in Sources */,
+				5E8635942BC8DFE700CE98E9 /* QItem.swift in Sources */,
+				5E8634FC2BC8D7C200CE98E9 /* UIImage+Extension.swift in Sources */,
 				5E7FFC9F2BBB6949000353AD /* QueenlyTryOn.docc in Sources */,
+				5E8635832BC8DFE700CE98E9 /* QAPI.swift in Sources */,
+				5E86357F2BC8DFE700CE98E9 /* QKey.swift in Sources */,
+				5E8635A02BC8DFE700CE98E9 /* QueenlyViewController.swift in Sources */,
+				5E8635A22BC8DFE700CE98E9 /* QTryOnToolButton.swift in Sources */,
+				5E86358C2BC8DFE700CE98E9 /* QueenlyTryOnButton.swift in Sources */,
+				5E8635912BC8DFE700CE98E9 /* QTryOnNode.swift in Sources */,
+				5E86358E2BC8DFE700CE98E9 /* QTryOnError.swift in Sources */,
+				5E8635932BC8DFE700CE98E9 /* QNavigationHeaderView.swift in Sources */,
+				5E86359D2BC8DFE700CE98E9 /* QTryOnRepositionToolStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +518,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +550,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
