@@ -1,0 +1,658 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.QueenlyTryOn-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "importPath" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/QKey.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/QTryOnUtil.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/QueenlyARTryOnViewController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/QueenlyTryOn.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/ar env/QARTryOnUtil.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/ar env/QItemARMeasurement.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/ar env/QTryOnBodyGuideView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/ar env/QTryOnNode.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QAlertPopUp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QLoadingOverlayView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QNavigationHeaderView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QPopUpViewController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QTryOnGesturesTutorialOverlayView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QTryOnRepositionToolStack.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QTryOnResizeToolStack.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QTryOnToolButton.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QueenlyButton.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QueenlyIconButton.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QueenlyTryOnButton.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QueenlyViewController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/Array+Extension.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/CGPoint+Extension.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/SCNVector3+Extension.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/String+Extension.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/UIImage+Extension.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/UIPinchGestureRecognizer+Extension.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/UIView+Extension.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QAPIError.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QAccount.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QAccountManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QCroppedImage.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QItem.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QItemManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QJointName.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QTryOnError.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/networking/QAPI.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QItemPhotoMeasurement.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QPhotoCell.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QPhotoTryOnUtil.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QTryOnObject.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QTryOnPhotoLandingViewController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QTryOnPhotoResultViewController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QueenlyLibraryPickerViewController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/util/QImageHandler.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/util/QTryOnStyling.swift"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "QueenlyTryOn",
+      "moduleOutputPath" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.swiftmodule",
+      "objects" : [
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/QKey.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/QTryOnUtil.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/QueenlyARTryOnViewController.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/QueenlyTryOn.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/ar env/QARTryOnUtil.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/ar env/QItemARMeasurement.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/ar env/QTryOnBodyGuideView.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/ar env/QTryOnNode.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QAlertPopUp.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QLoadingOverlayView.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QNavigationHeaderView.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QPopUpViewController.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QTryOnGesturesTutorialOverlayView.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QTryOnRepositionToolStack.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QTryOnResizeToolStack.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QTryOnToolButton.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QueenlyButton.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QueenlyIconButton.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QueenlyTryOnButton.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QueenlyViewController.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/Array+Extension.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/CGPoint+Extension.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/SCNVector3+Extension.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/String+Extension.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/UIImage+Extension.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/UIPinchGestureRecognizer+Extension.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/UIView+Extension.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QAPIError.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QAccount.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QAccountManager.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QCroppedImage.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QItem.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QItemManager.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QJointName.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QTryOnError.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/networking/QAPI.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QItemPhotoMeasurement.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QPhotoCell.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QPhotoTryOnUtil.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QTryOnObject.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QTryOnPhotoLandingViewController.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QTryOnPhotoResultViewController.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QueenlyLibraryPickerViewController.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/util/QImageHandler.swift.o",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/util/QTryOnStyling.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-swift-version",
+        "5",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-g",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/QueenlyTryOn-Swift.h",
+        "-color-diagnostics",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.0.sdk",
+        "-target",
+        "x86_64-apple-ios13.0-simulator",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-package-name",
+        "queenlytryon"
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/QKey.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/QTryOnUtil.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/QueenlyARTryOnViewController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/QueenlyTryOn.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/ar env/QARTryOnUtil.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/ar env/QItemARMeasurement.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/ar env/QTryOnBodyGuideView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/ar env/QTryOnNode.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QAlertPopUp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QLoadingOverlayView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QNavigationHeaderView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QPopUpViewController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QTryOnGesturesTutorialOverlayView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QTryOnRepositionToolStack.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QTryOnResizeToolStack.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QTryOnToolButton.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QueenlyButton.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QueenlyIconButton.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QueenlyTryOnButton.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/component/QueenlyViewController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/Array+Extension.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/CGPoint+Extension.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/SCNVector3+Extension.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/String+Extension.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/UIImage+Extension.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/UIPinchGestureRecognizer+Extension.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/extension/UIView+Extension.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QAPIError.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QAccount.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QAccountManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QCroppedImage.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QItem.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QItemManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QJointName.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/model/QTryOnError.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/networking/QAPI.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QItemPhotoMeasurement.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QPhotoCell.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QPhotoTryOnUtil.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QTryOnObject.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QTryOnPhotoLandingViewController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QTryOnPhotoResultViewController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/photo env/QueenlyLibraryPickerViewController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/util/QImageHandler.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/util/QTryOnStyling.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.swiftmodule"
+        }
+      ],
+      "sources" : [
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/QKey.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/QTryOnUtil.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/QueenlyARTryOnViewController.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/QueenlyTryOn.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/ar env/QARTryOnUtil.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/ar env/QItemARMeasurement.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/ar env/QTryOnBodyGuideView.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/ar env/QTryOnNode.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QAlertPopUp.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QLoadingOverlayView.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QNavigationHeaderView.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QPopUpViewController.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QTryOnGesturesTutorialOverlayView.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QTryOnRepositionToolStack.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QTryOnResizeToolStack.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QTryOnToolButton.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QueenlyButton.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QueenlyIconButton.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QueenlyTryOnButton.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QueenlyViewController.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/Array+Extension.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/CGPoint+Extension.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/SCNVector3+Extension.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/String+Extension.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/UIImage+Extension.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/UIPinchGestureRecognizer+Extension.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/UIView+Extension.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QAPIError.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QAccount.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QAccountManager.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QCroppedImage.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QItem.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QItemManager.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QJointName.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QTryOnError.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/networking/QAPI.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QItemPhotoMeasurement.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QPhotoCell.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QPhotoTryOnUtil.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QTryOnObject.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QTryOnPhotoLandingViewController.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QTryOnPhotoResultViewController.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QueenlyLibraryPickerViewController.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/util/QImageHandler.swift",
+        "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/util/QTryOnStyling.swift"
+      ],
+      "tempsPath" : "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "QueenlyTryOn" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "QueenlyTryOn",
+      "-package-name",
+      "queenlytryon",
+      "-incremental",
+      "-c",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/QKey.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/QTryOnUtil.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/QueenlyARTryOnViewController.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/QueenlyTryOn.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/ar env/QARTryOnUtil.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/ar env/QItemARMeasurement.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/ar env/QTryOnBodyGuideView.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/ar env/QTryOnNode.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QAlertPopUp.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QLoadingOverlayView.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QNavigationHeaderView.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QPopUpViewController.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QTryOnGesturesTutorialOverlayView.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QTryOnRepositionToolStack.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QTryOnResizeToolStack.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QTryOnToolButton.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QueenlyButton.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QueenlyIconButton.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QueenlyTryOnButton.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/component/QueenlyViewController.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/Array+Extension.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/CGPoint+Extension.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/SCNVector3+Extension.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/String+Extension.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/UIImage+Extension.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/UIPinchGestureRecognizer+Extension.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/extension/UIView+Extension.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QAPIError.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QAccount.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QAccountManager.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QCroppedImage.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QItem.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QItemManager.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QJointName.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/model/QTryOnError.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/networking/QAPI.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QItemPhotoMeasurement.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QPhotoCell.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QPhotoTryOnUtil.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QTryOnObject.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QTryOnPhotoLandingViewController.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QTryOnPhotoResultViewController.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/photo env/QueenlyLibraryPickerViewController.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/util/QImageHandler.swift",
+      "/Users/micamorales/Desktop/QueenlyTryOn/Sources/QueenlyTryOn/util/QTryOnStyling.swift",
+      "-I",
+      "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug",
+      "-target",
+      "arm64-apple-macosx10.13",
+      "-swift-version",
+      "5",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-g",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/QueenlyTryOn-Swift.h",
+      "-color-diagnostics",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator17.0.sdk",
+      "-target",
+      "x86_64-apple-ios13.0-simulator",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-package-name",
+      "queenlytryon",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "QueenlyTryOn" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  }
+}

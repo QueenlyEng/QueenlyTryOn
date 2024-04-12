@@ -1,0 +1,4 @@
+module QueenlyTryOn {
+    header "/Users/micamorales/Desktop/QueenlyTryOn/.build/arm64-apple-macosx/debug/QueenlyTryOn.build/QueenlyTryOn-Swift.h"
+    requires objc
+}
