@@ -10,6 +10,7 @@ import UIKit
 public class QueenlyTryOnButton: QueenlyButton {
     
     weak var presentingVC: UIViewController?
+    weak var delegate: QueenlyTryOnDelegate?
     
     var productTitle: String
     var color: String
@@ -35,6 +36,7 @@ public class QueenlyTryOnButton: QueenlyButton {
     
     @objc private func openARTryOn() {
         let vc = QueenlyARTryOnViewController(productTitle: productTitle, color: color)
+        vc.delegate = delegate
         let navVC = UINavigationController(rootViewController: vc)
         presentingVC?.present(navVC, animated: true)
     }

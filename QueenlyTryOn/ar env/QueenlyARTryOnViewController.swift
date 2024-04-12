@@ -15,6 +15,8 @@ fileprivate enum QPopUpTag: Int {
 
 public class QueenlyARTryOnViewController: QueenlyViewController {
     
+    weak var delegate: QueenlyTryOnDelegate?
+    
     fileprivate let itemManager = QItemManager()
     fileprivate let tryOnUtil = QTryOnUtil()
     fileprivate let arTryOnUtil = QARTryOnUtil()
@@ -215,6 +217,7 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
         setupButtonActions()
         addGestures()
         processItem()
+        delegate?.queenlyTryOnDidPresent(self)
     }
     
     public override func viewWillAppear(_ animated: Bool) {
@@ -224,6 +227,7 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
             renderAlertPopUp(message: "This feature is not supported on this device",
                              type: .error,
                              shouldDismiss: true)
+            delegate?.queenlyTryOn(self, didFailWithError: QTryOnError(type: .unsupportedDevice))
             return
         }
         sceneView.session.run(bodyTrackingConfig, options: sessionOptions)
@@ -237,6 +241,11 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
         bodyDetectionTimer?.invalidate()
         userPoseDetectionTimer?.invalidate()
         sceneView.session.pause()
+    }
+    
+    override func didTapOnBack() {
+        super.didTapOnBack()
+        delegate?.queenlyTryOnDidFinish(self)
     }
     
     // MARK: - Set up & Layout
@@ -253,6 +262,9 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
                                            type: .error,
                                            duration: 3.0)
                     self?.removeSpinner()
+                    if let strongSelf = self {
+                        strongSelf.delegate?.queenlyTryOn(strongSelf, didFailWithError: QTryOnError(type: .cameraAccessDenied))
+                    }
                 }
             }
         }
@@ -720,6 +732,9 @@ extension QueenlyARTryOnViewController {
                                            message: "Access to photo library is required to save your photo. On your device, go to Settings > \(QueenlyTryOn.account.accountName) and allow full acesss to Photos.",
                                            type: .error,
                                            duration: 3.0)
+                    if let strongSelf = self {
+                        strongSelf.delegate?.queenlyTryOn(strongSelf, didFailWithError: QTryOnError(type: .photoAccessDenied))
+                    }
                 }
             }
         }
