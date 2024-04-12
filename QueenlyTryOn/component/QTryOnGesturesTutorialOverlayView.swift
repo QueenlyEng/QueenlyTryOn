@@ -72,7 +72,7 @@ class QTryOnGesturesTutorialOverlayView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: iconName)
+        imageView.image = imageHandler.image(named: iconName)
         imageView.transform = CGAffineTransform(rotationAngle: imageRotationAngle)
         imageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 120).isActive = true

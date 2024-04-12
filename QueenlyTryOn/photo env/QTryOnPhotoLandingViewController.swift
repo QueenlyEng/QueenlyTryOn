@@ -197,7 +197,7 @@ class QTryOnPhotoLandingViewController: QueenlyViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: iconName)
+        imageView.image = imageHandler.image(named: iconName)
         
         let imageWidthConstraint = imageView.widthAnchor.constraint(equalToConstant: width)
         let imageHeightConstraint = imageView.heightAnchor.constraint(equalToConstant: height)
@@ -215,7 +215,7 @@ class QTryOnPhotoLandingViewController: QueenlyViewController {
         let textImageView = UIImageView()
         textImageView.translatesAutoresizingMaskIntoConstraints = false
         textImageView.contentMode = .scaleAspectFit
-        textImageView.image = UIImage(named: textIconName)?.withRenderingMode(.alwaysTemplate)
+        textImageView.image = imageHandler.image(named: textIconName)?.withRenderingMode(.alwaysTemplate)
         textImageView.tintColor = iconColor
         textImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
         textImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true

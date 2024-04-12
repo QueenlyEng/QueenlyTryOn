@@ -166,7 +166,7 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
     
     fileprivate lazy var snapshotButton: QueenlyIconButton = {
         let dimension: CGFloat = min(80, ceil(contentBounds.size.width * 0.18))
-        let icon = UIImage(named: "record_icon")?.withRenderingMode(.alwaysTemplate)
+        let icon = imageHandler.image(named: "record_icon")?.withRenderingMode(.alwaysTemplate)
         let button = QueenlyIconButton(icon: icon)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.iconTintColor = .white.withAlphaComponent(0.9)
@@ -352,7 +352,7 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: iconName)
+        imageView.image = imageHandler.image(named: iconName)
         imageView.widthAnchor.constraint(equalToConstant: 215).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 215).isActive = true
         

@@ -9,7 +9,7 @@ The Queenly Virtual Try-On iOS SDK helps you build a customizable virtual try-on
 
 ### Swift Package Manager Integration
 
-1. In Xcode, select File > Add Packages… and enter https://github.com/QueenlyEng/[LINK TO ADD] as the repository URL.* *Link coming soon!
+1. In Xcode, select File > Add Packages… and enter https://github.com/QueenlyEng/QueenlyTryOn as the repository URL.* *Link coming soon!
 
 2. Select the latest version number from our releases page.
 

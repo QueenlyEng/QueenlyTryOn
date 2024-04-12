@@ -18,6 +18,7 @@ class QTryOnResizeToolStack: UIStackView {
     var maxScaleValue: CGFloat
     
     private let sliderDimension: CGSize
+    private let imageHandler = QImageHandler()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -41,7 +42,7 @@ class QTryOnResizeToolStack: UIStackView {
     }()
     
     lazy var scaleUpButton: QueenlyIconButton = {
-        let button = QueenlyIconButton(icon: UIImage(named: "plus_circle_icon"))
+        let button = QueenlyIconButton(icon: imageHandler.image(named: "plus_circle_icon"))
         button.translatesAutoresizingMaskIntoConstraints = false
         button.iconTintColor = .white
         button.widthAnchor.constraint(equalToConstant: 26).isActive = true
@@ -50,7 +51,7 @@ class QTryOnResizeToolStack: UIStackView {
     }()
     
     lazy var scaleDownButton: QueenlyIconButton = {
-        let button = QueenlyIconButton(icon: UIImage(named: "minus_circle_icon"))
+        let button = QueenlyIconButton(icon: imageHandler.image(named: "minus_circle_icon"))
         button.translatesAutoresizingMaskIntoConstraints = false
         button.iconTintColor = .white
         button.widthAnchor.constraint(equalToConstant: 26).isActive = true
