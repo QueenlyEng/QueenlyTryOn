@@ -15,6 +15,7 @@ class QTryOnGesturesTutorialOverlayView: UIView {
     
     weak var delegate: QTryOnGesturesTutorialOverlayViewDelegate?
     
+    private let imageHandler = QImageHandler()
     private var timer: Timer?
     
     private lazy var mainHStack: UIStackView = {
