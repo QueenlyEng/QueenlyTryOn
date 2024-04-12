@@ -21,7 +21,7 @@ let package = Package(
             name: "QueenlyTryOn",
             path: "QueenlyTryOn",
             resources: [
-                .process("Assets.xcassets"),
+                .process("QueenlyTryOn/Assets.xcassets"),
             ]
         )
     ]
