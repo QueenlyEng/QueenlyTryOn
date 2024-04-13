@@ -9,7 +9,10 @@ import UIKit
 
 struct QImageHandler {
     func image(named: String) -> UIImage? {
-        return UIImage(named: named, in: Bundle(for: QueenlyTryOn.self), with: nil)
+        if let image = UIImage(named: named, in: Bundle(for: QueenlyTryOn.self), with: nil) {
+            return image
+        }
+        return UIImage(named: named, in: Bundle.module, with: nil)
     }
     
     func loadImage(fromUrl url: URL?, completion: @escaping (_ image: UIImage?) -> ()) {
