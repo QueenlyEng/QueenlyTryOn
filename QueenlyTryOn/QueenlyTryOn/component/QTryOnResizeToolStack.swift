@@ -22,7 +22,7 @@ class QTryOnResizeToolStack: UIStackView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Reposition"
+        label.text = "Resize"
         QTryOnStyling.applyTryOnTootlTitleStyling(on: label)
         return label
     }()

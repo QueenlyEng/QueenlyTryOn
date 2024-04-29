@@ -102,7 +102,7 @@ class QTryOnPhotoResultViewController: QueenlyViewController {
     }()
     
     fileprivate lazy var leftToolsVStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [resetToolButton, resizeToolStack])
+        let stack = UIStackView(arrangedSubviews: [resetToolButton])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.alignment = .center
@@ -110,7 +110,6 @@ class QTryOnPhotoResultViewController: QueenlyViewController {
         stack.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         stack.isLayoutMarginsRelativeArrangement = true
         stack.directionalLayoutMargins.bottom = bottomVerticalToolsSpacing
-        stack.directionalLayoutMargins.leading = edgeToolsSpacing
         return stack
     }()
     
@@ -129,6 +128,7 @@ class QTryOnPhotoResultViewController: QueenlyViewController {
                                               maxScaleValue: maxScaleValue,
                                               sliderDimension: sliderDimension)
         toolStack.translatesAutoresizingMaskIntoConstraints = false
+        toolStack.directionalLayoutMargins.bottom = bottomVerticalToolsSpacing
         return toolStack
     }()
     
@@ -200,17 +200,21 @@ class QTryOnPhotoResultViewController: QueenlyViewController {
     fileprivate func layoutTools() {
         contentView.addSubview(leftToolsVStack)
         contentView.addSubview(repositionToolStack)
+        contentView.addSubview(resizeToolStack)
         contentView.addSubview(rightToolsVStack)
         contentView.addSubview(savePhotoButton)
         NSLayoutConstraint.activate([
             rightToolsVStack.bottomAnchor.constraint(equalTo: savePhotoButton.topAnchor),
             rightToolsVStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
-            repositionToolStack.bottomAnchor.constraint(equalTo: savePhotoButton.topAnchor),
+            resizeToolStack.bottomAnchor.constraint(equalTo: savePhotoButton.topAnchor),
+            resizeToolStack.scaleSlider.centerXAnchor.constraint(equalTo: repositionToolStack.arrowUpButton.centerXAnchor),
+            
+            repositionToolStack.bottomAnchor.constraint(equalTo: resizeToolStack.topAnchor),
             repositionToolStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             
             leftToolsVStack.bottomAnchor.constraint(equalTo: repositionToolStack.topAnchor),
-            leftToolsVStack.centerXAnchor.constraint(equalTo: repositionToolStack.centerXAnchor),
+            leftToolsVStack.centerXAnchor.constraint(equalTo: resizeToolStack.centerXAnchor),
             
             savePhotoButton.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -bottomVerticalToolsSpacing),
             savePhotoButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
