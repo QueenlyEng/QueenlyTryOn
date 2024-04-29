@@ -41,4 +41,21 @@ struct QAPI {
             return nil
         }
     }
+    
+    func logSession(productTitle: String, actionType: QTryOnActionType) {
+        let sessionId = UUID().uuidString
+        let productTitleFormatted = productTitle.uppercased().getUrlQueryFormattedString()
+        let urlString = "https://us-central1-queenly-alpha.cloudfunctions.net/publicvto-logvtosession?sessionId=\(sessionId)&productId=\(productTitleFormatted)&actionType=\(actionType.rawValue)&userId=\(QueenlyTryOn.userId)"
+        if let url = URL(string: urlString) {
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { (data, response, error) in
+                if let error = error {
+                    print("Error logging session:", error.localizedDescription)
+                    return
+                }
+            }
+            
+            task.resume()
+        }
+    }
 }

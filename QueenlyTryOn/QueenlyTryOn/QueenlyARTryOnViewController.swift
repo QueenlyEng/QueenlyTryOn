@@ -18,6 +18,7 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
     weak var delegate: QueenlyTryOnDelegate?
     
     fileprivate let itemManager = QItemManager()
+    fileprivate let api = QAPI()
     fileprivate let tryOnUtil = QTryOnUtil()
     fileprivate let arTryOnUtil = QARTryOnUtil()
     
@@ -787,6 +788,7 @@ extension QueenlyARTryOnViewController {
     fileprivate func onPhotoUploadButton() {
         guard let item = item else { return }
         
+        api.logSession(productTitle: productTitle, actionType: .photoUploadTapped)
         requestLibraryAccess { authorized in
             DispatchQueue.main.async { [weak self] in
                 if authorized {
@@ -799,9 +801,6 @@ extension QueenlyARTryOnViewController {
                                            duration: 3.0)
                 }
             }
-        }
-        guard PHPhotoLibrary.authorizationStatus(for: .readWrite) == .authorized else {
-            return
         }
     }
 }

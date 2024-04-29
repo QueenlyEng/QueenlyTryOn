@@ -21,6 +21,7 @@ public class QueenlyTryOn: NSObject {
     
     static var authKey: String = ""
     static var accountId: String = ""
+    static var userId: String = ""
     static var account: QAccount = QAccount()
     static var logo: UIImage? = nil
     static var brandColor: UIColor = UIColor(red: 0.41, green: 0.16, blue: 0.92, alpha: 1.00)
@@ -43,6 +44,11 @@ public class QueenlyTryOn: NSObject {
                 completion(false)
             }
         }
+    }
+    
+    @objc
+    public static func setUserId(_ userId: String) {
+        QueenlyTryOn.userId = userId
     }
     
     @objc

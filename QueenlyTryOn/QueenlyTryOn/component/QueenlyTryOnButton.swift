@@ -17,6 +17,8 @@ public class QueenlyTryOnButton: QueenlyButton {
     var productTitle: String
     var color: String
     
+    private let api = QAPI()
+    
     // MARK: - Init
     @objc 
     public init(productTitle: String, color: String?, presentingVC: UIViewController) {
@@ -41,6 +43,7 @@ public class QueenlyTryOnButton: QueenlyButton {
         vc.delegate = delegate
         let navVC = UINavigationController(rootViewController: vc)
         presentingVC?.present(navVC, animated: true)
+        api.logSession(productTitle: productTitle, actionType: .tryOnButtonTapped)
     }
     
 }
