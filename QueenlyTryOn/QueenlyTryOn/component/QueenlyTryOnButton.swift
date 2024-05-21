@@ -7,12 +7,23 @@
 
 import UIKit
 
+@objc
+public enum QueenlyTryOnButtonStyle: Int {
+    case capsule, rounded, none
+}
+
 public class QueenlyTryOnButton: QueenlyButton {
     
     weak var presentingVC: UIViewController?
     
     @objc
     public weak var delegate: QueenlyTryOnDelegate?
+    
+    @objc var buttonStyle: QueenlyTryOnButtonStyle = .capsule {
+        didSet {
+            setButtonStyle()
+        }
+    }
     
     var productTitle: String
     var color: String
@@ -35,7 +46,7 @@ public class QueenlyTryOnButton: QueenlyButton {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = frame.size.height / 2
+        setButtonStyle()
     }
     
     @objc private func openARTryOn() {
@@ -44,6 +55,17 @@ public class QueenlyTryOnButton: QueenlyButton {
         let navVC = UINavigationController(rootViewController: vc)
         presentingVC?.present(navVC, animated: true)
         api.logSession(productTitle: productTitle, actionType: .tryOnButtonTapped)
+    }
+    
+    private func setButtonStyle() {
+        switch buttonStyle {
+        case .capsule:
+            layer.cornerRadius = frame.size.height / 2
+        case .rounded:
+            layer.cornerRadius = 10
+        case .none:
+            layer.cornerRadius = 0
+        }
     }
     
 }
