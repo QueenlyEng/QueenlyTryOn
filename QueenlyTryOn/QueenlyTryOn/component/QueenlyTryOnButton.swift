@@ -19,7 +19,8 @@ public class QueenlyTryOnButton: QueenlyButton {
     @objc
     public weak var delegate: QueenlyTryOnDelegate?
     
-    @objc var buttonStyle: QueenlyTryOnButtonStyle = .capsule {
+    @objc 
+    public var buttonStyle: QueenlyTryOnButtonStyle = .capsule {
         didSet {
             setButtonStyle()
         }
