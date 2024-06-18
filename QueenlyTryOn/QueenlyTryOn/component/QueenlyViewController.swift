@@ -48,6 +48,7 @@ public class QueenlyViewController: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         isModalInPresentation = true
+        view.backgroundColor = .white
         layout()
     }
     
@@ -63,7 +64,7 @@ public class QueenlyViewController: UIViewController {
         view.addSubview(headerView)
         NSLayoutConstraint.activate([
             headerView.heightAnchor.constraint(equalToConstant: headerHeight),
-            headerView.topAnchor.constraint(equalTo: view.topAnchor),
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])

@@ -19,6 +19,27 @@ struct QItemManager {
         }
     }
     
+    func fetchItems(productIds: [String],
+                    completion: @escaping (_ items: [QItem]) -> ()) {
+        var items: [QItem?] = Array(repeating: nil, count: productIds.count)
+        let dispatchGroup = DispatchGroup()
+        for i in 0..<productIds.count {
+            let productId = productIds[i]
+            let urlString = "https://us-central1-queenly-alpha.cloudfunctions.net/publicvto-vtoimagemodels?accountId=\(QueenlyTryOn.accountId)&authenticationKey=\(QueenlyTryOn.authKey)&productId=\(productId)"
+            dispatchGroup.enter()
+            api.loadData(fromUrlString: urlString) { data in
+                if let item = parseItemJSON(data).item {
+                    items[i] = item
+                }
+                dispatchGroup.leave()
+            }
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            completion(items.compactMap { $0 })
+        }
+    }
+    
     private func parseItemJSON(_ data: Data?) -> (item: QItem?, error: QAPIError?) {
         guard let data = data else { return (nil, nil) }
         do {

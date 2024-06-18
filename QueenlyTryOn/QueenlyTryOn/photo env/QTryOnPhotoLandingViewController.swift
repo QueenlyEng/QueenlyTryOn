@@ -10,7 +10,9 @@ import PhotosUI
 
 class QTryOnPhotoLandingViewController: QueenlyViewController {
     
-    private let item: QItem
+    var moreTryOnProductIds: [String] = []
+    
+    private let tryOnSet: QTryOnSet
     private let albumName = "\(QueenlyTryOn.account.accountName) Try On"
     private var albumAssetCollection: PHAssetCollection? = nil
     private var selectedImageAssetIdentifier: String?
@@ -140,8 +142,8 @@ class QTryOnPhotoLandingViewController: QueenlyViewController {
     }()
     
     // MARK: - Init
-    init(item: QItem) {
-        self.item = item
+    init(tryOnSet: QTryOnSet) {
+        self.tryOnSet = tryOnSet
         super.init()
     }
     
@@ -248,13 +250,9 @@ class QTryOnPhotoLandingViewController: QueenlyViewController {
         if !isPhotoSelectedFromQueenly {
             saveToQueenlyAlbum(image)
         }
-        let vc = QTryOnPhotoResultViewController(item: item, userImage: image)
+        let vc = QTryOnPhotoResultViewController(tryOnSet: tryOnSet, userImage: image)
+        vc.moreTryOnProductIds = moreTryOnProductIds
         navigationController?.pushViewController(vc, animated: true)
-        //        let vc = TryOnPhotoUploadResultViewController(dress: dress,
-        //                                                      userImage: image,
-        //                                                      dressImage: dressImage)
-        //        vc.delegate = delegate
-        //        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func loadImageData(fromProvider provider: NSItemProvider,

@@ -10,15 +10,18 @@ import Photos
 
 class QTryOnPhotoResultViewController: QueenlyViewController {
     
-    fileprivate let itemManager = QItemManager()
+    var moreTryOnProductIds: [String] = []
+    
     fileprivate let tryOnUtil = QTryOnUtil()
     fileprivate let photoTryOnUtil = QPhotoTryOnUtil()
     
     fileprivate let userImage: UIImage
     
-    fileprivate var productId: String
-    fileprivate var item: QItem
+    fileprivate var currentTryOnSet: QTryOnSet = QTryOnSet()
     fileprivate var productIdToObj: [String: QTryOnObject] = [:]
+    fileprivate var lastProductId: String {
+        return currentTryOnSet.lastAddedItem?.productId ?? ""
+    }
     
     fileprivate var isProcessingItem: Bool = true
     fileprivate var userBodyPoints: [QJointName: CGPoint] = [:]
@@ -122,7 +125,7 @@ class QTryOnPhotoResultViewController: QueenlyViewController {
     }()
     
     fileprivate lazy var resizeToolStack: QTryOnResizeToolStack = {
-        let scaleMultiplier = productIdToObj[productId]?.scaleMultiplier ?? .zero
+        let scaleMultiplier = productIdToObj[lastProductId]?.scaleMultiplier ?? .zero
         let toolStack = QTryOnResizeToolStack(currentValue: scaleMultiplier,
                                               minScaleValue: minScaleValue,
                                               maxScaleValue: maxScaleValue,
@@ -164,10 +167,19 @@ class QTryOnPhotoResultViewController: QueenlyViewController {
         return imageView
     }()
     
+    fileprivate lazy var suggestedItemsCarousel: QTryOnSuggestedItemCarousel = {
+        let carousel = QTryOnSuggestedItemCarousel(productIds: moreTryOnProductIds)
+        carousel.translatesAutoresizingMaskIntoConstraints = false
+        carousel.currentTryOnIds = currentTryOnSet.allProductIds
+        carousel.minWidth = view.frame.size.width * 0.6
+        carousel.maxWidth = view.frame.size.width * 0.9
+        carousel.delegate = self
+        return carousel
+    }()
+    
     // MARK: - Init
-    init(item: QItem, userImage: UIImage) {
-        self.item = item
-        self.productId = item.productId
+    init(tryOnSet: QTryOnSet, userImage: UIImage) {
+        self.currentTryOnSet = tryOnSet
         self.userImage = userImage
         super.init()
     }
@@ -203,7 +215,12 @@ class QTryOnPhotoResultViewController: QueenlyViewController {
         contentView.addSubview(resizeToolStack)
         contentView.addSubview(rightToolsVStack)
         contentView.addSubview(savePhotoButton)
+        contentView.addSubview(suggestedItemsCarousel)
         NSLayoutConstraint.activate([
+            suggestedItemsCarousel.heightAnchor.constraint(equalToConstant: 100),
+            suggestedItemsCarousel.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 16),
+            suggestedItemsCarousel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            
             rightToolsVStack.bottomAnchor.constraint(equalTo: savePhotoButton.topAnchor),
             rightToolsVStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
@@ -227,13 +244,22 @@ class QTryOnPhotoResultViewController: QueenlyViewController {
                 for (jointName, point) in bodyPoints {
                     self.userBodyPoints[jointName] = self.userImage.convertPoint(point, to: self.userImageView)
                 }
-                self.renderItem()
+                self.renderItems()
                 self.layoutTools()
             }
         }
     }
     
-    fileprivate func renderItem() {
+    fileprivate func renderItems() {
+        for i in 0..<currentTryOnSet.allItems.count {
+            let item = currentTryOnSet.allItems[i]
+            if productIdToObj[item.productId] == nil {
+                renderItem(item, at: i)
+            }
+        }
+    }
+    
+    fileprivate func renderItem(_ item: QItem, at viewIndex: Int) {
         guard let tryOnImage = item.tryOnImage else { return }
         
         let hasRenderedObj = productIdToObj[item.productId] != nil
@@ -241,7 +267,7 @@ class QTryOnPhotoResultViewController: QueenlyViewController {
         if !hasRenderedObj {
             addGestures(on: itemObj)
             productIdToObj[item.productId] = itemObj
-            userImageView.addSubview(itemObj)
+            userImageView.insertSubview(itemObj, at: viewIndex)
         }
         
         photoTryOnUtil.fetchPhotoMeasurement(item: item, userBodyPoints: userBodyPoints) { [weak self] measurement, error in
@@ -284,6 +310,15 @@ class QTryOnPhotoResultViewController: QueenlyViewController {
         object.contentMode = .scaleToFill
         object.isUserInteractionEnabled = true
         return object
+    }
+    
+    fileprivate func removeTryOnObjects() {
+        for (id, obj) in productIdToObj {
+            if !currentTryOnSet.allProductIds.contains(id) {
+                obj.removeFromSuperview()
+                productIdToObj[id] = nil
+            }
+        }
     }
 }
 
@@ -336,49 +371,49 @@ extension QTryOnPhotoResultViewController {
     }
     
     fileprivate func onMirrorFlipButton() {
-        if let obj = productIdToObj[productId] {
+        if let obj = productIdToObj[lastProductId] {
             obj.isMirrored.toggle()
             obj.updateImage()
         }
     }
     
     fileprivate func onLeftTiltButton() {
-        if let obj = productIdToObj[productId] {
+        if let obj = productIdToObj[lastProductId] {
             obj.rotationOffset += rotationValue
             obj.updateImage()
         }
     }
     
     fileprivate func onRightTiltButton() {
-        if let obj = productIdToObj[productId] {
+        if let obj = productIdToObj[lastProductId] {
             obj.rotationOffset -= rotationValue
             obj.updateImage()
         }
     }
     
     fileprivate func onArrowUpButton() {
-        if let obj = productIdToObj[productId] {
+        if let obj = productIdToObj[lastProductId] {
             obj.positionOffset.y += posOffsetValue
             updatePosition(of: obj)
         }
     }
     
     fileprivate func onArrowDownButton() {
-        if let obj = productIdToObj[productId] {
+        if let obj = productIdToObj[lastProductId] {
             obj.positionOffset.y -= posOffsetValue
             updatePosition(of: obj)
         }
     }
     
     fileprivate func onArrowRightButton() {
-        if let obj = productIdToObj[productId] {
+        if let obj = productIdToObj[lastProductId] {
             obj.positionOffset.x += posOffsetValue
             updatePosition(of: obj)
         }
     }
     
     fileprivate func onArrowLeftButton() {
-        if let obj = productIdToObj[productId] {
+        if let obj = productIdToObj[lastProductId] {
             obj.positionOffset.x -= posOffsetValue
             updatePosition(of: obj)
         }
@@ -390,7 +425,7 @@ extension QTryOnPhotoResultViewController {
     }
     
     fileprivate func onScaleUpButton() {
-        if let obj = productIdToObj[productId] {
+        if let obj = productIdToObj[lastProductId] {
             obj.scaleMultiplier = min(obj.scaleMultiplier + 1, maxScaleValue)
             resizeToolStack.currentValue = obj.scaleMultiplier
             updateSize(of: obj)
@@ -398,19 +433,27 @@ extension QTryOnPhotoResultViewController {
     }
     
     fileprivate func onScaleDownButton() {
-        if let obj = productIdToObj[productId] {
+        if let obj = productIdToObj[lastProductId] {
             obj.scaleMultiplier = max(obj.scaleMultiplier - 1, minScaleValue)
             resizeToolStack.currentValue = obj.scaleMultiplier
             updateSize(of: obj)
         }
     }
     
+    fileprivate func setScaleSlider(_ newValue: CGFloat? = nil) {
+        if let obj = productIdToObj[lastProductId] {
+            if let newValue = newValue {
+                obj.scaleMultiplier = newValue
+                updateSize(of: obj)
+            } else {
+                resizeToolStack.currentValue = obj.scaleMultiplier
+            }
+        }
+    }
+    
     @objc
     fileprivate func rangeSliderValueDidChange(_ sender: UISlider) {
-        if let obj = productIdToObj[productId] {
-            obj.scaleMultiplier = CGFloat(sender.value)
-            updateSize(of: obj)
-        }
+        setScaleSlider(CGFloat(sender.value))
     }
     
     fileprivate func updateSize(of obj: QTryOnObject) {
@@ -591,4 +634,35 @@ extension QTryOnPhotoResultViewController: UIGestureRecognizerDelegate {
     }
 }
 
-
+// MARK: - QTryOnSuggestedItemCarouselDelegate
+extension QTryOnPhotoResultViewController: QTryOnSuggestedItemCarouselDelegate {
+    func suggestedItemCarousel(_ carousel: QTryOnSuggestedItemCarousel, didSelect item: QItem) {
+        if !currentTryOnSet.allProductIds.contains(item.productId) {
+            var item = item
+            renderSpinner()
+            imageHandler.loadImage(fromUrl: item.tryOnImageUrl) { [weak self] image in
+                DispatchQueue.main.async {
+                    if let image = image {
+                        let croppedImage = image.cropAlpha()
+                        item.tryOnImage = croppedImage.resultImage
+                        self?.currentTryOnSet.addItem(item)
+                        self?.removeSpinner()
+                        self?.didUpdateCurrentTryOnSet()
+                    }
+                }
+            }
+        }
+    }
+    
+    func suggestedItemCarousel(_ carousel: QTryOnSuggestedItemCarousel, didDeselect item: QItem) {
+        currentTryOnSet.removeItem(item)
+        didUpdateCurrentTryOnSet()
+    }
+    
+    func didUpdateCurrentTryOnSet() {
+        removeTryOnObjects()
+        renderItems()
+        setScaleSlider()
+        suggestedItemsCarousel.currentTryOnIds = currentTryOnSet.allProductIds
+    }
+}

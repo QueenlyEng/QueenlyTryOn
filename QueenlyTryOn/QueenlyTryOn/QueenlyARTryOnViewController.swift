@@ -17,6 +17,8 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
     
     weak var delegate: QueenlyTryOnDelegate?
     
+    var moreTryOnProductIds: [String] = []
+    
     fileprivate let itemManager = QItemManager()
     fileprivate let api = QAPI()
     fileprivate let tryOnUtil = QTryOnUtil()
@@ -24,16 +26,15 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
     
     fileprivate let productTitle: String
     fileprivate let color: String
-    fileprivate var item: QItem?
     fileprivate var productIdToNode: [String: QTryOnNode] = [:]
-    fileprivate var mainProductId: String {
-        return item?.productId ?? ""
+    fileprivate var lastProductId: String {
+        return currentTryOnSet.lastAddedItem?.productId ?? ""
     }
+    
+    fileprivate var currentTryOnSet: QTryOnSet = QTryOnSet()
     
     fileprivate let bodyTrackingConfig = ARBodyTrackingConfiguration()
     fileprivate let sessionOptions: ARSession.RunOptions = [.resetTracking, .removeExistingAnchors]
-    
-    fileprivate var didFetchMeasurements: Bool = false
     
     fileprivate var isProcessingItem: Bool = true
     fileprivate var isSessionSetupComplete: Bool = false
@@ -42,7 +43,7 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
     fileprivate var jointPositions: [ARSkeleton.JointName: SCNVector3] = [:] {
         didSet {
             if !isInteractingWithNode {
-                renderItem()
+                renderItems()
             }
         }
     }
@@ -96,6 +97,7 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
         let sceneView = ARSCNView()
         sceneView.translatesAutoresizingMaskIntoConstraints = false
         sceneView.automaticallyUpdatesLighting = true
+        sceneView.backgroundColor = .black
         return sceneView
     }()
     
@@ -149,7 +151,7 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
     }()
     
     fileprivate lazy var resizeToolStack: QTryOnResizeToolStack = {
-        let scaleMultiplier = productIdToNode[mainProductId]?.scaleMultiplier ?? .zero
+        let scaleMultiplier = productIdToNode[lastProductId]?.scaleMultiplier ?? .zero
         let toolStack = QTryOnResizeToolStack(currentValue: scaleMultiplier,
                                               minScaleValue: minScaleValue,
                                               maxScaleValue: maxScaleValue,
@@ -197,6 +199,16 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
         guide.translatesAutoresizingMaskIntoConstraints = false
         guide.isHidden = !isBodyGuideShowing
         return guide
+    }()
+    
+    fileprivate lazy var suggestedItemsCarousel: QTryOnSuggestedItemCarousel = {
+        let carousel = QTryOnSuggestedItemCarousel(productIds: moreTryOnProductIds)
+        carousel.translatesAutoresizingMaskIntoConstraints = false
+        carousel.currentTryOnIds = currentTryOnSet.allProductIds
+        carousel.minWidth = view.frame.size.width * 0.6
+        carousel.maxWidth = view.frame.size.width * 0.9
+        carousel.delegate = self
+        return carousel
     }()
     
     // MARK: - Init
@@ -251,8 +263,6 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
     
     // MARK: - Set up & Layout
     fileprivate func setup() {
-        let dispatchGroup = DispatchGroup()
-        dispatchGroup.enter()
         requestCameraVideoAccess { authorized in
             DispatchQueue.main.async { [weak self] in
                 if authorized {
@@ -290,7 +300,12 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
         contentView.addSubview(rightToolsVStack)
         contentView.addSubview(snapshotButton)
         contentView.addSubview(photoUploadButton)
+        contentView.addSubview(suggestedItemsCarousel)
         NSLayoutConstraint.activate([
+            suggestedItemsCarousel.heightAnchor.constraint(equalToConstant: 100),
+            suggestedItemsCarousel.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 16),
+            suggestedItemsCarousel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            
             rightToolsVStack.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor),
             rightToolsVStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
@@ -493,13 +508,19 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
         itemManager.fetchItem(productTitle: productTitle) { [weak self] item, error in
-            if let item = item {
-                self?.item = item
-                
+            if var item = item {
                 self?.imageHandler.loadImage(fromUrl: item.tryOnImageUrl) { image in
-                    if let image = image {
-                        let croppedImage = image.cropAlpha()
-                        self?.item?.tryOnImage = croppedImage.resultImage
+                    DispatchQueue.main.async { [weak self] in
+                        if let image = image, let strongSelf = self {
+                            let resultImage = image.cropAlpha().resultImage
+                            item.tryOnImage = resultImage
+                            strongSelf.currentTryOnSet.addItem(item)
+                            strongSelf.didUpdateCurrentTryOnSet()
+                        } else {
+                            self?.renderAlertPopUp(title: "An error occured",
+                                                   message: "Please try again later",
+                                                   type: .error)
+                        }
                     }
                     dispatchGroup.leave()
                 }
@@ -522,7 +543,14 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
         }
     }
     
-    fileprivate func renderItem() {
+    fileprivate func renderItems() {
+        guard !jointPositions.isEmpty else { return }
+        for item in currentTryOnSet.allItems {
+            renderItem(item)
+        }
+    }
+    
+    fileprivate func renderItem(_ item: QItem?) {
         guard let item = item,
               let tryOnImage = item.tryOnImage,
               let rootPosition = jointPositions[.root],
@@ -537,7 +565,7 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
             sceneView.scene.rootNode.addChildNode(itemNode)
         }
         
-        if !didFetchMeasurements {
+        if !itemNode.didFetchMeasurement {
             arTryOnUtil.fetchARMeasurement(item: item, jointPositions: jointPositions, userBodyPoints: userBodyPoints) { [weak self] measurement, error in
                 DispatchQueue.main.async {
                     guard let strongSelf = self else { return }
@@ -547,7 +575,7 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
                     }
                 }
             }
-            didFetchMeasurements = true
+            itemNode.didFetchMeasurement = true
         } else {
             configNode(itemNode, tryOnImage: tryOnImage, rootPosition: rootPosition)
         }
@@ -570,8 +598,7 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
     @objc
     fileprivate func processCurrentUserBodyData() {
         guard !isProcessingUserBodyData else { return }
-        guard let _ = item?.tryOnImage,
-              let userImage = arTryOnUtil.getUserImage(from: sceneView) else { return }
+        guard let userImage = arTryOnUtil.getUserImage(from: sceneView) else { return }
         
         isProcessingUserBodyData = true
         userBodyPoints = [:]
@@ -581,7 +608,9 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
             strongSelf.userBodyPoints = bodyPoints
             strongSelf.isProcessingUserBodyData = false
             DispatchQueue.main.async {
-                strongSelf.didFetchMeasurements = false
+                for (_, node) in strongSelf.productIdToNode {
+                    node.resetMeasurement()
+                }
             }
         }
     }
@@ -593,7 +622,9 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
                 jointPositions = [:]
                 removeTryOnNodes()
                 isBodyGuideShowing = true
-                didFetchMeasurements = false
+                for (_, node) in productIdToNode {
+                    node.resetMeasurement()
+                }
                 bodyGuideView.animate()
             }
         } else if isBodyGuideShowing {
@@ -606,6 +637,15 @@ public class QueenlyARTryOnViewController: QueenlyViewController {
         for (id, node) in productIdToNode {
             node.removeFromParentNode()
             productIdToNode[id] = nil
+        }
+    }
+    
+    fileprivate func removeUnusedTryOnNodes() {
+        for (id, node) in productIdToNode {
+            if !currentTryOnSet.allProductIds.contains(id) {
+                node.removeFromParentNode()
+                productIdToNode[id] = nil
+            }
         }
     }
 }
@@ -663,66 +703,72 @@ extension QueenlyARTryOnViewController {
         }
         resizeToolStack.currentValue = .zero
         userBodyPoints = [:]
-        didFetchMeasurements = false
         resetSession()
     }
     
     fileprivate func onLeftTiltButton() {
-        if let node = productIdToNode[mainProductId] {
+        if let node = productIdToNode[lastProductId] {
             node.rotationOffset += rotationValue
         }
     }
     
     fileprivate func onRightTiltButton() {
-        if let node = productIdToNode[mainProductId] {
+        if let node = productIdToNode[lastProductId] {
             node.rotationOffset -= rotationValue
         }
     }
     
     fileprivate func onArrowUpButton() {
-        if let node = productIdToNode[mainProductId] {
+        if let node = productIdToNode[lastProductId] {
             node.positionOffset.y += posOffsetValue
         }
     }
     
     fileprivate func onArrowDownButton() {
-        if let node = productIdToNode[mainProductId] {
+        if let node = productIdToNode[lastProductId] {
             node.positionOffset.y -= posOffsetValue
         }
     }
     
     fileprivate func onArrowRightButton() {
-        if let node = productIdToNode[mainProductId] {
+        if let node = productIdToNode[lastProductId] {
             node.positionOffset.x += posOffsetValue
         }
     }
     
     fileprivate func onArrowLeftButton() {
-        if let node = productIdToNode[mainProductId] {
+        if let node = productIdToNode[lastProductId] {
             node.positionOffset.x -= posOffsetValue
         }
     }
     
     fileprivate func onScaleUpButton() {
-        if let node = productIdToNode[mainProductId] {
+        if let node = productIdToNode[lastProductId] {
             node.scaleMultiplier = min(node.scaleMultiplier + 1, maxScaleValue)
             resizeToolStack.currentValue = node.scaleMultiplier
         }
     }
     
     fileprivate func onScaleDownButton() {
-        if let node = productIdToNode[mainProductId] {
+        if let node = productIdToNode[lastProductId] {
             node.scaleMultiplier = max(node.scaleMultiplier - 1, minScaleValue)
             resizeToolStack.currentValue = node.scaleMultiplier
         }
     }
     
+    fileprivate func setScaleSlider(_ newValue: CGFloat? = nil) {
+        if let node = productIdToNode[lastProductId] {
+            if let newValue = newValue {
+                node.scaleMultiplier = newValue
+            } else {
+                resizeToolStack.currentValue = node.scaleMultiplier
+            }
+        }
+    }
+    
     @objc
     fileprivate func rangeSliderValueDidChange(_ sender: UISlider) {
-        if let node = productIdToNode[mainProductId] {
-            node.scaleMultiplier = CGFloat(sender.value)
-            resizeToolStack.currentValue = node.scaleMultiplier
-        }
+        setScaleSlider(CGFloat(sender.value))
     }
     
     fileprivate func onSnapshotButton() {
@@ -786,14 +832,13 @@ extension QueenlyARTryOnViewController {
     }
     
     fileprivate func onPhotoUploadButton() {
-        guard let item = item else { return }
-        
         api.logSession(productTitle: productTitle, actionType: .photoUploadTapped)
         requestLibraryAccess { authorized in
             DispatchQueue.main.async { [weak self] in
-                if authorized {
-                    let vc = QTryOnPhotoLandingViewController(item: item)
-                    self?.navigationController?.pushViewController(vc, animated: true)
+                if let strongSelf = self, authorized {
+                    let vc = QTryOnPhotoLandingViewController(tryOnSet: strongSelf.currentTryOnSet)
+                    vc.moreTryOnProductIds = strongSelf.moreTryOnProductIds
+                    strongSelf.navigationController?.pushViewController(vc, animated: true)
                 } else {
                     self?.renderAlertPopUp(title: "Library access denied!",
                                            message: "Photo library is required to use this feature. On your device, go to Settings > \(QueenlyTryOn.account.accountName) and allow full acesss to Photos.",
@@ -888,15 +933,16 @@ extension QueenlyARTryOnViewController {
             if let interactingNode = interactingScalingNode as? QTryOnNode,
                let initialNodeGeo = interactingNode.initialNodeGeoAtInteraction,
                gesture.numberOfTouches >= 2 {
+                let item = interactingNode.item
                 var planeWidth = initialNodeGeo.width
                 var planeHeight = initialNodeGeo.height
                 if gesture.direction == .vertical {
                     planeHeight = initialNodeGeo.height * gesture.scale
                 } else {
                     planeWidth = initialNodeGeo.width * gesture.scale
-                    planeHeight = arTryOnUtil.getItemPlaneHeight(item: interactingNode.item, measurement: interactingNode.measurement, verticalScaleMultiplier: interactingNode.verticalScaleMultiplier)
+                    planeHeight = arTryOnUtil.getItemPlaneHeight(item: item, measurement: interactingNode.measurement, verticalScaleMultiplier: interactingNode.verticalScaleMultiplier)
                 }
-                let dressGeometry = arTryOnUtil.createNodePlane(tryOnImage: item?.tryOnImage, planeWidth: planeWidth, planeHeight: planeHeight)
+                let dressGeometry = arTryOnUtil.createNodePlane(tryOnImage: item.tryOnImage, planeWidth: planeWidth, planeHeight: planeHeight)
                 interactingNode.geometry = dressGeometry
             }
         default:
@@ -977,5 +1023,36 @@ extension QueenlyARTryOnViewController: ARSessionDelegate {
                 removeSpinner()
             }
         }
+    }
+}
+
+// MARK: - QTryOnSuggestedItemCarouselDelegate
+extension QueenlyARTryOnViewController: QTryOnSuggestedItemCarouselDelegate {
+    func suggestedItemCarousel(_ carousel: QTryOnSuggestedItemCarousel, didSelect item: QItem) {
+        if !currentTryOnSet.allProductIds.contains(item.productId) {
+            var item = item
+            renderSpinner()
+            imageHandler.loadImage(fromUrl: item.tryOnImageUrl) { [weak self] image in
+                if let image = image {
+                    let croppedImage = image.cropAlpha()
+                    item.tryOnImage = croppedImage.resultImage
+                    self?.currentTryOnSet.addItem(item)
+                    self?.removeSpinner()
+                    self?.didUpdateCurrentTryOnSet()
+                }
+            }
+        }
+    }
+    
+    func suggestedItemCarousel(_ carousel: QTryOnSuggestedItemCarousel, didDeselect item: QItem) {
+        currentTryOnSet.removeItem(item)
+        didUpdateCurrentTryOnSet()
+    }
+    
+    func didUpdateCurrentTryOnSet() {
+        renderItems()
+        removeUnusedTryOnNodes()
+        setScaleSlider()
+        suggestedItemsCarousel.currentTryOnIds = currentTryOnSet.allProductIds
     }
 }

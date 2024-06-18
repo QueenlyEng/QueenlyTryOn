@@ -18,6 +18,18 @@ class QPhotoCell: UICollectionViewCell {
         }
     }
     
+    var isPhotoSelected: Bool = false {
+        didSet {
+            styleSelectState()
+        }
+    }
+    
+    var showSelectedState: Bool = false {
+        didSet {
+            styleSelectState()
+        }
+    }
+    
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -26,7 +38,7 @@ class QPhotoCell: UICollectionViewCell {
         imageView.backgroundColor = .lightGray
         return imageView
     }()
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
         layout()
@@ -46,8 +58,16 @@ class QPhotoCell: UICollectionViewCell {
         ])
     }
     
+    private func styleSelectState() {
+        let selectedStyle = showSelectedState && isPhotoSelected
+        contentView.layer.borderWidth = selectedStyle ? 2 : 0
+        contentView.layer.borderColor = selectedStyle ? QueenlyTryOn.brandColor.cgColor : UIColor.clear.cgColor
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         image = nil
+        isPhotoSelected = false
+        showSelectedState = false
     }
 }

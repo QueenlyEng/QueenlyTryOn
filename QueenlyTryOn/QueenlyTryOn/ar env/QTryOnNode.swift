@@ -32,6 +32,7 @@ class QTryOnNode: SCNNode {
     var positionOffset: CGPoint = .zero
     
     var measurement: QItemARMeasurement = QItemARMeasurement()
+    var didFetchMeasurement: Bool = false
     
     var initialNodePositionAtInteraction: SCNVector3? = nil
     var initialNodeGeoAtInteraction: SCNPlane? = nil
@@ -55,7 +56,12 @@ class QTryOnNode: SCNNode {
         positionOffset = .zero
         rotationOffset = .zero
         
+        resetMeasurement()
+    }
+    
+    func resetMeasurement() {
         measurement = QItemARMeasurement()
+        didFetchMeasurement = false
     }
     
     func config(withCamera cameraNode: SCNNode?,

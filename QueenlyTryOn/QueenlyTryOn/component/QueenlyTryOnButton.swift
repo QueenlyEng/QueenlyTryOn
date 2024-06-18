@@ -26,6 +26,12 @@ public class QueenlyTryOnButton: QueenlyButton {
         }
     }
     
+    @objc
+    public var presentationStyle: UIModalPresentationStyle = .automatic
+    
+    @objc
+    public var moreTryOnProductIds: [String] = []
+    
     var productTitle: String
     var color: String
     
@@ -53,7 +59,9 @@ public class QueenlyTryOnButton: QueenlyButton {
     @objc private func openARTryOn() {
         let vc = QueenlyARTryOnViewController(productTitle: productTitle, color: color)
         vc.delegate = delegate
+        vc.moreTryOnProductIds = moreTryOnProductIds
         let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalPresentationStyle = presentationStyle
         presentingVC?.present(navVC, animated: true)
         api.logSession(productTitle: productTitle, actionType: .tryOnButtonTapped)
     }

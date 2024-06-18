@@ -22,6 +22,10 @@ struct QItem: Codable {
         return URL(string: "\(fullTryOnImageSignature)?p")
     }
     
+    var imageUrl: URL? {
+        return URL(string: fullImageSignature)
+    }
+    
     enum CodingKeys: String, CodingKey {
         case hemline, neckline
         case productId = "product_id"
