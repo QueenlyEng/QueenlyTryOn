@@ -33,7 +33,7 @@ struct QTryOnSet {
     
     
     mutating func addItem(_ item: QItem) {
-        if (item.styleTags.contains("top") && !isSet(item)) || isSwimwear(item) {
+        if (item.styleTags.contains("top") && !isSet(item)) || (isSwimwear(item) && !item.styleTags.isInterstecting(with: ["maxi", "midi", "mini"])) {
             top = item
             set = nil
         } else if item.styleTags.isInterstecting(with: ["bottom", "skirt", "shorts", "pants", "leggings"]) && !isSet(item) {
